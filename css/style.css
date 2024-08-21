@@ -49,3 +49,19 @@ body {
     word-break: break-all;
     color: #333;
 }
+
+.typing-text p span {
+    position: relative;
+}
+
+.typing-text p span.correct {
+    color: #4CAF50;
+}
+
+.typing-text p span.incorrect {
+    color: #FF5722;
+}
+
+.typing-text p span.active {
+    color: #3498DB;
+}
