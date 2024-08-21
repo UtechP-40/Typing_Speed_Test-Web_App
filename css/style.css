@@ -30,3 +30,15 @@ body {
     z-index: -999;
     position: absolute;
 }
+.wrapper .content-box {
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #E0E0E0;
+}
+.content-box .typing-text {
+    overflow: hidden;
+    max-height: 256px;
+}
+.typing-text::-webkit-scrollbar {
+    width: 0;
+}
