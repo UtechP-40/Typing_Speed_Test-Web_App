@@ -42,3 +42,10 @@ body {
 .typing-text::-webkit-scrollbar {
     width: 0;
 }
+.typing-text p {
+    font-size: 18px;
+    text-align: justify;
+    letter-spacing: 1px;
+    word-break: break-all;
+    color: #333;
+}
