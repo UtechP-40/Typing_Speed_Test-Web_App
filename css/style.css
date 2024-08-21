@@ -11,16 +11,62 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #2C3A47;
+    background: #020202;
+    /* background: #2C3A47; */
+    /* box-shadow: rgba(251, 252, 253, 0.642) 0px 30px 60px -12px inset, #fffffff1 0px 18px 36px -18px inset; */
 }
 .wrapper {
+    color:white;
     text-align: center;
     width: 770px;
     padding: 35px;
-    background: #F4F4F4;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* background: #F4F4F4; */
+    background: black;
+    border-radius: 50px;
+    /* box-shadow: 0 10px 20px rgba(16, 11, 11, 0.895); */
+    position: relative;
+    /* box-shadow:  40px 40px 100px #2fd13f,
+             -40px -40px 100px #1dddff; */
 }
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.wrapper {
+    position: relative; /* Ensure the pseudo-elements are positioned relative to the wrapper */
+}
+
+.wrapper::after, .wrapper::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 0%, rgb(0, 140, 255),rgb(8, 255, 8),rgb(201, 8, 255),rgb(212, 74, 32),rgb(45, 8, 255),rgb(8, 255, 255));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 3px;
+    border-radius: 50px;
+    animation: 3s spin linear infinite;
+}
+
+.wrapper::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
 ::selection {
     color: #fff;
     background: #4CAF50;
@@ -33,7 +79,7 @@ body {
 .wrapper .content-box {
     padding: 20px;
     border-radius: 20px;
-    border: 1px solid #E0E0E0;
+    border: 1px solid #ffffff;
 }
 .content-box .typing-text {
     overflow: hidden;
@@ -47,7 +93,7 @@ body {
     text-align: justify;
     letter-spacing: 1px;
     word-break: break-all;
-    color: #333;
+    color: #eae8e8;
 }
 
 .typing-text p span {
@@ -130,7 +176,7 @@ body {
 
 .result-details li:not(:first-child) {
     padding-left: 22px;
-    border-left: 1px solid #E0E0E0;
+    border-left: 1px solid #ffffff;
 }
 
 .result-details li p {
